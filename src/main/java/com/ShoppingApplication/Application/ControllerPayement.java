@@ -85,7 +85,17 @@ public class ControllerPayement {
 	        data.updateOrder(order);
 	        return new ResponseEntity(map,HttpStatus.BAD_REQUEST);
 		}
-		
+		else {
+			map.put("orderId", orderId);
+			map.put("userId", userId);
+	        map.put("transactionId","tran"+Products.transactionNum+"#"+orderId);   order.setTransactionId("tran"+Products.transactionNum+"#"+orderId);
+	        Products.transactionNum++;                                   
+	        map.put("status", "failed");                                           order.setStatus("failed");
+	        map.put("description", "No response from payment server");             order.setDescription("No response from payment server");
+	        data.updateOrder(order);
+	        return new ResponseEntity(map,HttpStatus.GATEWAY_TIMEOUT);
+		}
 		
 	}
+	
 }
