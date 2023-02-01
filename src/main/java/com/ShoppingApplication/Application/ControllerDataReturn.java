@@ -51,4 +51,20 @@ public class ControllerDataReturn {
 		}
 		
 	}
+	
+	@GetMapping("/{userId}/orders/{orderId}")
+	public ResponseEntity orderDetails(@PathVariable("userId") int userId, @PathVariable("orderId") int orderId) {
+		
+		Orders order=data.getOrderDetails(userId,orderId);
+		Map<String,Object> map = new HashMap<>();
+		
+		if(order==null) {
+			map.put("OrderId",orderId);
+			map.put("description","Order not found");
+			return new ResponseEntity(map,HttpStatus.NOT_FOUND);
+		}
+		else {
+			return new ResponseEntity(order,HttpStatus.OK);
+		}
+	}
 }
