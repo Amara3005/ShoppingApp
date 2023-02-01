@@ -10,6 +10,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.ShoppingApp.User;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
@@ -78,4 +80,16 @@ public class DAO_User {
 			return order;
 		}	
 	}
+	
+	public void changeCouponStatus(int userId,String coupon) {
+		User user=enty.find(User.class, userId);
+		
+		if(coupon.equals("OFF5"))
+			user.setOff5(true);                                     // If the order is succesfull then we have to change the coupon Status.
+		else                                                        //  if false then coupon is not used
+			user.setOff10(true);                                    //  if true then that particular coupon has already used.
+		
+		enty.merge(user);
+	}
+	
 }
