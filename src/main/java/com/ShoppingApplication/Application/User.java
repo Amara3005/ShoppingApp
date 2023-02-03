@@ -3,6 +3,7 @@ package com.ShoppingApplication.Application;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -22,5 +23,47 @@ public class User {
 		this.id = id;                          
 		off5=false;                          //  I have intialized the off5 and off10 to false,  
 		off10=false;                         //   -> if off5 is false then it is not yet used,
-	}   
+	}  
+	
+
+    public User() {
+		
+	}
+	
+    public void addOrder(Orders order) {
+		list.add(order);                        // This method is used to add any new Orders to the List;
+	}
+    
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public boolean isOff5() {
+		return off5;
+	}
+
+	public void setOff5(boolean off5) {
+		this.off5 = off5;
+	}
+
+	public boolean isOff10() {
+		return off10;
+	}
+
+	public void setOff10(boolean off10) {
+		this.off10 = off10;
+	}
+
+	public List<Orders> getList() {
+		return list;
+	}
+
+	public void setList(List<Orders> list) {
+		this.list = list;
+	}
+	
 }
