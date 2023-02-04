@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.ShoppingApp.Orders;
-import com.example.ShoppingApp.Products;
 
 @Controller
 public class ControllerPayement {
