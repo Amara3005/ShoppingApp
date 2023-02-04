@@ -1,13 +1,9 @@
 package com.ShoppingApplication.Application;
 
-
-
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.example.ShoppingApp.User;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

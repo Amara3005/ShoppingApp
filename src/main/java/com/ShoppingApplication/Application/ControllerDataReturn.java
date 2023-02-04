@@ -13,6 +13,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
+/*
+ * 
+ *          1.) /{userId}/orders   Displays all orders of a particular userId.
+ *              -> If the userId is valid, then it display's all basic details of orders by running a loop through the list.
+ *                 And sending the data in the form of a Json Format.
+ *                 
+ *              -> else send the message "Invalid UserId"
+ *              
+ *          2.) /{userId}/orders/{orderId}       Displaying the details of a Particular orderId
+ *              -> If the orderId and userId is valid then send the data of that order.
+ *              
+ *              -> Else send the message "Invalid OrderId".
+ *           
+ *           
+ */
 
 @Controller
 public class ControllerDataReturn {
