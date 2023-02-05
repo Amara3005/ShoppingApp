@@ -1,9 +1,13 @@
 package com.ShoppingApplication.Application;
 
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
+/*
+ *              This class contain all the basic details required for the order.
+ *              
+ */
+
 
 @Entity(name="orders")
 public class Orders {
